@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "url-service runtime settings",
+  "description": "The shape of environments/<environment>/config.json, which is published to the runtime-settings AWS AppConfig profile. Both objects are closed on purpose: a flag or setting is added here, with its type and limits, in the same change that adds it to the config files and the service that reads it, so nothing reaches a deployment unreviewed.",
+  "type": "object",
+  "properties": {
+    "featureFlags": {
+      "description": "Switches that turn a behaviour on or off at runtime. None are defined yet.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "settings": {
+      "description": "Live-tunable values, such as a threshold or a limit. None are defined yet.",
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "featureFlags",
+    "settings"
+  ],
+  "additionalProperties": false
+}
